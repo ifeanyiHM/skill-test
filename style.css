@@ -1,0 +1,572 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope&display=swap");
+:root {
+  --color-text: #707070;
+  --color-text-dark: #072635;
+  --color-background-1: #f6f7f8;
+  --color-background-2: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+  background-color: var(--color-background-1);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--color-background-2);
+  border-radius: 70px;
+  padding: 0.688em 2em;
+  color: var(--color-text-dark);
+  margin: 1.125em 1.125em 0 1.125em;
+  font-size: 0.875em;
+}
+header .logo svg {
+  width: 13.161em;
+}
+header nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5em;
+  width: 41.412em;
+}
+header nav ul li a {
+  padding: 0.688em 1em;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--color-text-dark);
+}
+header nav ul li a span:nth-child(2) {
+  font-size: 0.875em;
+  font-weight: bold;
+}
+header nav ul li a span svg {
+  width: 0.969em;
+}
+header nav ul li a:nth-child(2) {
+  background: #01f0d0;
+  border-radius: 41px;
+}
+header .profile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5em;
+}
+header .profile img {
+  width: 2.813em;
+  height: 2.813em;
+  cursor: pointer;
+}
+header .profile .profile-name span {
+  display: block;
+  font-size: 0.875em;
+  cursor: pointer;
+  font-weight: bold;
+}
+header .profile .profile-name span:nth-child(2) {
+  color: var(--color-text);
+  font-weight: 400;
+}
+header .profile .setting {
+  padding-left: 1em;
+  border-left: 1px solid #ededed;
+  display: flex;
+  gap: 0.928em;
+  cursor: pointer;
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 2rem;
+  margin: 2rem 1.25rem 0 1.125rem;
+}
+main section {
+  background: var(--color-background-2);
+  border-radius: 16px;
+  font-size: 0.875em;
+}
+main section h2 {
+  font-size: 1.5em;
+  font-weight: bolder;
+  color: var(--color-text-dark);
+}
+main .patient-list {
+  grid-column: 1/2;
+  height: 65.875em;
+}
+main .patient-list .patient-list-container {
+  padding: 1.25rem 0;
+  font-size: 0.875em;
+}
+main .patient-list .patient-list-container .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding: 0 1.25rem;
+}
+main .patient-list .patient-list-container .header svg {
+  cursor: pointer;
+}
+main .patient-list .patient-list-container ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  height: 52rem;
+  overflow-y: scroll;
+}
+main .patient-list .patient-list-container ul::-webkit-scrollbar {
+  width: 0.375rem;
+  border-radius: 100vh;
+}
+main .patient-list .patient-list-container ul::-webkit-scrollbar-track {
+  background: #e3e4e6;
+  border-radius: 100vw;
+}
+main .patient-list .patient-list-container ul::-webkit-scrollbar-thumb {
+  border-top: 100px solid var(--color-text-dark);
+  border-bottom: 35px solid transparent;
+  background-clip: padding-box;
+  border-radius: 100vw;
+}
+main .patient-list .patient-list-container ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.25rem;
+}
+main .patient-list .patient-list-container ul li:nth-child(4) {
+  background: #d8fcf7;
+}
+main .patient-list .patient-list-container ul li span svg {
+  cursor: pointer;
+}
+main .patient-list .patient-list-container ul li .ct-1 {
+  display: flex;
+  gap: 0.75rem;
+}
+main .patient-list .patient-list-container ul li .ct-1 img {
+  width: 3em;
+}
+main .patient-list .patient-list-container ul li .ct-1 div span {
+  display: block;
+}
+main .patient-list .patient-list-container ul li .ct-1 div span:first-child {
+  font-weight: bold;
+}
+main .patient-list .patient-list-container ul li .ct-1 div span:nth-child(2) {
+  color: var(--color-text);
+}
+main .diagnosis-history {
+  grid-column: 2/4;
+  height: 42.063em;
+}
+main .diagnosis-history .diagnosis-history-container {
+  padding: 1.25em;
+}
+main .diagnosis-history .diagnosis-history-container h2 {
+  padding-bottom: 2.5rem;
+  font-size: 1.5em;
+}
+main .diagnosis-history .diagnosis-history-container .legend {
+  background: #f4f0fe;
+  border-radius: 12px;
+  padding: 1rem;
+  display: flex;
+}
+main .diagnosis-history .diagnosis-history-container .legend .chart-container {
+  width: 32.375rem;
+}
+main .diagnosis-history .diagnosis-history-container .legend .chart-container canvas {
+  width: 100%;
+}
+main .diagnosis-history .diagnosis-history-container .legend ul {
+  width: 13rem;
+  list-style: none;
+  font-size: 0.875em;
+  color: #072635;
+}
+main .diagnosis-history .diagnosis-history-container .legend ul h3 {
+  font-size: 1.375em;
+  padding: 0.5em 0;
+}
+main .diagnosis-history .diagnosis-history-container .legend ul li {
+  border-bottom: 1px solid #e4dddd;
+  padding-bottom: 1.031em;
+  font-size: 0.875em;
+}
+main .diagnosis-history .diagnosis-history-container .legend ul li .name {
+  display: flex;
+  gap: 0.25rem;
+  align-items: center;
+  font-weight: bold;
+}
+main .diagnosis-history .diagnosis-history-container .legend ul li .name span:first-child {
+  display: block;
+  width: 0.87em;
+  height: 0.875em;
+  background: #e66fd2;
+  border-radius: 24px;
+}
+main .diagnosis-history .diagnosis-history-container .legend ul li .rate {
+  display: flex;
+  gap: 0.5em;
+  align-items: center;
+}
+main .diagnosis-history .diagnosis-history-container .legend ul li .rate span:first-child {
+  font-size: 0.625em;
+}
+main .diagnosis-history .diagnosis-history-container .legend ul li:last-child {
+  padding: 1.031em 0 0 0;
+  border: 0;
+}
+main .diagnosis-history .diagnosis-history-container .legend ul li:last-child .name span:first-child {
+  background: #8c6fe6;
+}
+main .diagnosis-history .diagnosis-history-container .diagnois-measurement {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.313rem;
+  padding-top: 1.25rem;
+}
+main .diagnosis-history .diagnosis-history-container .diagnois-measurement div {
+  background: #ffe6e9;
+  padding: 1rem;
+  border-radius: 12px;
+}
+main .diagnosis-history .diagnosis-history-container .diagnois-measurement div:first-child {
+  order: 2;
+}
+main .diagnosis-history .diagnosis-history-container .diagnois-measurement div:last-child {
+  order: 3;
+}
+main .diagnosis-history .diagnosis-history-container .diagnois-measurement div img {
+  width: 6em;
+}
+main .diagnosis-history .diagnosis-history-container .diagnois-measurement div p {
+  font-size: 1em;
+  padding-top: 1rem;
+}
+main .diagnosis-history .diagnosis-history-container .diagnois-measurement div h3 {
+  font-size: 1.875em;
+}
+main .diagnosis-history .diagnosis-history-container .diagnois-measurement div span {
+  display: block;
+  font-size: 0.875em;
+  padding-top: 1.063rem;
+}
+main .patient {
+  grid-column: 4/5;
+  height: 46.25em;
+  transform: translateY(-0.938rem);
+}
+main .patient .patient-container {
+  padding: 2em 1.25em 2em 1.25em;
+}
+main .patient .patient-container .header {
+  text-align: center;
+}
+main .patient .patient-container .header img {
+  width: 12.5em;
+}
+main .patient .patient-container .header h2 {
+  margin: 1.5rem 0 2rem 0;
+  size: 1.5em;
+  font-weight: 800;
+}
+main .patient .patient-container ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5em;
+}
+main .patient .patient-container ul li {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+main .patient .patient-container ul li span svg {
+  width: 2.625em;
+}
+main .patient .patient-container ul li div span {
+  display: block;
+  color: var(--color-text-dark);
+  font-size: 0.875em;
+}
+main .patient .patient-container ul li div span:nth-child(2) {
+  font-weight: bold;
+}
+main .patient .patient-container p {
+  text-align: center;
+  font-weight: bold;
+  color: var(--color-text-dark);
+  margin: 2.5em auto 0 auto;
+  background: #01f0d0;
+  border-radius: 41px;
+  padding: 0.688em 0;
+  width: 13.75em;
+  cursor: pointer;
+}
+main .diagnosis-list {
+  grid-column: 2/4;
+  height: 21.813em;
+  transform: translateY(-24.1em);
+  margin-bottom: -24.1em;
+}
+main .diagnosis-list .diagnosis-list-container {
+  padding: 1.25em;
+}
+main .diagnosis-list .diagnosis-list-container h2 {
+  margin-bottom: 2.5rem;
+  font-size: 1.5rem;
+  color: var(--color-text-dark);
+}
+main .diagnosis-list .diagnosis-list-container .table,
+main .diagnosis-list .diagnosis-list-container .table-body {
+  width: 100%;
+}
+main .diagnosis-list .diagnosis-list-container .tr {
+  display: grid;
+  grid-template-columns: 30% 55% 15%;
+  padding: 0.938em 1em;
+}
+main .diagnosis-list .diagnosis-list-container .table-header {
+  font-size: 0.875em;
+  font-weight: bold;
+  background: #f6f7f8;
+  border-radius: 24px;
+}
+main .diagnosis-list .diagnosis-list-container .table-body {
+  height: 12.8em;
+  font-size: 0.875em;
+  overflow-y: scroll;
+}
+main .diagnosis-list .diagnosis-list-container .table-body::-webkit-scrollbar {
+  width: 0.375rem;
+  border-radius: 100vh;
+}
+main .diagnosis-list .diagnosis-list-container .table-body::-webkit-scrollbar-track {
+  background: #e3e4e6;
+  border-radius: 100vw;
+}
+main .diagnosis-list .diagnosis-list-container .table-body::-webkit-scrollbar-thumb {
+  border-top: 100px solid var(--color-text-dark);
+  border-bottom: 35px solid transparent;
+  background-clip: padding-box;
+  border-radius: 100vw;
+}
+main .diagnosis-list .diagnosis-list-container .table-body .tr {
+  border-bottom: 1px solid #f6f7f8;
+}
+main .diagnosis-list .diagnosis-list-container .table-body .tr:last-child {
+  border-bottom: none;
+}
+main .lab-result {
+  grid-column: 4/5;
+  height: 18.5em;
+  transform: translateY(-21em);
+  margin-bottom: -21em;
+  padding: 0;
+}
+main .lab-result .lab-result-container {
+  padding: 1.25rem 1rem 1.25rem 1.25rem;
+}
+main .lab-result .lab-result-container h2 {
+  margin-bottom: 1rem;
+  font-size: 1.5em;
+  color: var(--color-text-dark);
+}
+main .lab-result .lab-result-container ul {
+  height: 13.3em;
+  overflow-y: scroll;
+  padding-right: 0.25rem;
+}
+main .lab-result .lab-result-container ul::-webkit-scrollbar {
+  width: 0.375rem;
+  border-radius: 100vh;
+}
+main .lab-result .lab-result-container ul::-webkit-scrollbar-track {
+  background: #e3e4e6;
+  border-radius: 100vw;
+}
+main .lab-result .lab-result-container ul::-webkit-scrollbar-thumb {
+  border-top: 51px solid var(--color-text-dark);
+  border-bottom: 35px solid transparent;
+  background-clip: padding-box;
+  border-radius: 100vw;
+}
+main .lab-result .lab-result-container ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.688em 1em;
+}
+main .lab-result .lab-result-container ul li span {
+  font-size: 0.875em;
+}
+main .lab-result .lab-result-container ul li span:nth-child(2) svg {
+  width: 1.25em;
+  cursor: pointer;
+}
+main .lab-result .lab-result-container ul li:nth-child(2) {
+  background: #f6f7f8;
+}
+main .lab-result .lab-result-container ul li:first-child {
+  padding-top: 0;
+}
+main .lab-result .lab-result-container ul li:last-child {
+  padding-bottom: 0;
+}
+
+@media screen and (max-width: 1161px) {
+  main .diagnosis-history {
+    height: 43em;
+  }
+}
+@media screen and (max-width: 1127px) {
+  header .logo svg {
+    width: 10em;
+  }
+  header nav ul {
+    gap: 0.5em;
+  }
+  header .profile img {
+    width: 2em;
+    height: 2em;
+  }
+  header .profile .profile-name {
+    display: none;
+  }
+  main .diagnosis-history {
+    height: 41.063em;
+  }
+  main .diagnosis-history .diagnosis-history-container .legend ul {
+    display: none;
+  }
+  main .diagnosis-history .diagnosis-history-container .diagnois-measurement div img {
+    width: 5em;
+  }
+  main .diagnosis-history .diagnosis-history-container .diagnois-measurement div p {
+    font-size: 0.7em;
+  }
+  main .diagnosis-history .diagnosis-history-container .diagnois-measurement div h3 {
+    font-size: 1.5em;
+  }
+  main .diagnosis-list-container .table .table-body {
+    overflow-x: hidden;
+  }
+}
+@media screen and (max-width: 942px) {
+  main .diagnosis-history {
+    height: 42.5em;
+    grid-column: 2/5;
+  }
+  main .diagnosis-history .diagnosis-history-container .legend ul {
+    display: block;
+  }
+  main .diagnosis-history .diagnosis-history-container .diagnois-measurement div img {
+    width: 6em;
+  }
+  main .diagnosis-history .diagnosis-history-container .diagnois-measurement div p {
+    font-size: 1em;
+  }
+  main .patient {
+    position: fixed;
+    display: none;
+    right: 1.3rem;
+    top: 12rem;
+    z-index: 10;
+  }
+  main .lab-result {
+    height: 21.813em;
+    transform: translateY(-24.1em);
+  }
+  main .lab-result .lab-result-container ul {
+    height: 15em;
+  }
+}
+@media screen and (max-width: 880px) {
+  header nav ul {
+    gap: 1em;
+    width: 30em;
+  }
+  header nav ul li a {
+    padding: 0.4em 0.5em;
+    gap: 0.2em;
+  }
+  header nav ul li a span:nth-child(2) {
+    font-size: 0.7em;
+  }
+  header nav ul li a span svg {
+    width: 0.8em;
+  }
+  header nav ul li a:nth-child(2) {
+    background: #01f0d0;
+    border-radius: 15px;
+  }
+}
+@media screen and (max-width: 739px) {
+  header .logo svg {
+    width: 5em;
+  }
+  header nav ul li a {
+    padding: 0.2em;
+    gap: 0.2em;
+  }
+  header nav ul li a span:nth-child(2) {
+    font-size: 0.7em;
+  }
+  header nav ul li a span svg {
+    width: 0.8em;
+  }
+  header nav ul li a:nth-child(2) {
+    background: #01f0d0;
+    border-radius: 15px;
+  }
+  header .profile .profile-name {
+    display: none;
+  }
+  header .profile .setting {
+    display: none;
+  }
+  main .diagnosis-history .diagnosis-history-container .legend ul {
+    display: none;
+  }
+  main .diagnosis-history .diagnosis-history-container .diagnois-measurement {
+    grid-template-columns: none;
+    gap: 1em;
+  }
+  main .diagnosis-history .diagnosis-history-container .diagnois-measurement div {
+    position: relative;
+    padding: 0.5em;
+  }
+  main .diagnosis-history .diagnosis-history-container .diagnois-measurement div img {
+    position: absolute;
+    width: 3.7em;
+    right: 1em;
+  }
+  main .diagnosis-history .diagnosis-history-container .diagnois-measurement div p {
+    font-size: 0.7em;
+    padding-top: 0;
+  }
+  main .diagnosis-history .diagnosis-history-container .diagnois-measurement div h3 {
+    font-size: 1.2em;
+  }
+  main .diagnosis-history .diagnosis-history-container .diagnois-measurement div span {
+    font-size: 0.7em;
+    padding-top: 0.5em;
+  }
+}/*# sourceMappingURL=style.css.map */
